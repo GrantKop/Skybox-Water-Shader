@@ -49,6 +49,7 @@ class Camera {
         void updatePosition(CameraMovement direction, float deltaTime);
         void processMouseMovement(GLFWwindow* window, bool constrainPitch = true);
         void processMouseScroll(float yoffset);
+        void cameraLookLeftAndRight(float angle);
 
     private:
         void updateCameraVectors();

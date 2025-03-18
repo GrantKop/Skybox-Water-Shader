@@ -93,3 +93,8 @@ void Camera::processMouseScroll(float yoffset) {
         fov = 45.0f;
     }
 }
+
+void Camera::cameraLookLeftAndRight(float angle) {
+    front = glm::rotate(front, glm::radians(angle), up);
+    right = glm::normalize(glm::cross(front, up));
+}

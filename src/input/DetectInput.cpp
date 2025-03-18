@@ -43,10 +43,17 @@ void processInput(GLFWwindow* window, Camera* camera, float deltaTime) {
         camera->updatePosition(DOWN, deltaTime);
     }
     if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS) {
-        camera->movementSpeed = 3.5f;
+        camera->movementSpeed = 5.5f;
     }
     if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_RELEASE) {
         camera->movementSpeed = 1.25f;
+    }
+    // Rotate camera left and right with Q and E keys   
+    if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS) {
+        camera->cameraLookLeftAndRight(0.1f);
+    }
+    if (glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS) {
+        camera->cameraLookLeftAndRight(-0.1f);
     }
     if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS) {
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
